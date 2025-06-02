@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dhanush SM | AI & Software Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            transition: all 0.3s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 2px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid var(--primary);
+            border-right: 2px solid var(--primary);
+            transform: rotate(45deg);
+            margin: -10px;
+            animation: scroll-down 2s infinite;
+        }
+
+        .scroll-indicator span:nth-child(2) {
+            animation-delay: -0.2s;
+        }
+
+        .scroll-indicator span:nth-child(3) {
+            animation-delay: -0.4s;
+        }
+
+        @keyframes scroll-down {
+            0% {
+                opacity: 0;
+                transform: rotate(45deg) translate(-20px, -20px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: rotate(45deg) translate(20px, 20px);
+            }
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .project-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card .project-image-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-card .project-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        .project-card .project-content p {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .project-card .tech-tags {
+            margin-bottom: 1rem;
+        }
+
+        .swiper-slide {
+            height: auto;
+            display: flex;
+        }
+
+        .skill-meter {
+            height: 6px;
+            border-radius: 3px;
+        }
+
+        .skill-meter::-webkit-progress-bar {
+            background-color: #e5e7eb;
+            border-radius: 3px;
+        }
+
+        .skill-meter::-webkit-progress-value {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        nav {
+            z-index: 100;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Mobile Menu */
+        #mobileMenu {
+            position: fixed;
+            width: 100%;
+            top: 80px;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            display: none;
+        }
+
+        #mobileMenu.active {
+            display: block;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .typewriter {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+            }
+
+            .floating {
+                animation: none;
+            }
+
+            .project-card {
+                margin-bottom: 20px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 16px;
+            }
+
+            .section-title::after {
+                width: 30%;
+            }
+
+            #mobileMenu {
+                top: 70px;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                display: none;
+            }
+
+            .text-4xl {
+                font-size: 2rem;
+            }
+
+            .text-6xl {
+                font-size: 2.5rem;
+            }
+
+            .grid-cols-1, .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .px-6 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .py-3 {
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm" style="z-index: 100;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Dhanush SM</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition font-medium nav-link">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition font-medium nav-link">About</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition font-medium nav-link">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition font-medium nav-link">Projects</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition font-medium nav-link">Journey</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition font-medium nav-link">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-gray-700 p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg" style="z-index: 90; position: fixed; width: 100%; top: 80px;">
+            <div class="flex flex-col space-y-3 pt-2">
+                <a href="#home" class="text-gray-700 hover:text-primary transition py-2 border-b border-gray-100">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-primary transition py-2 border-b border-gray-100">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-primary transition py-2 border-b border-gray-100">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-primary transition py-2 border-b border-gray-100">Projects</a>
+                <a href="#experience" class="text-gray-700 hover:text-primary transition py-2 border-b border-gray-100">Journey</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary transition py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden z-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5"></div>
+            <div class="absolute top-1/4 -right-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl"></div>
+            <div class="absolute bottom-1/4 -left-20 w-96 h-96 rounded-full bg-secondary/10 blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center px-4 py-1 bg-primary/10 text-primary rounded-full mb-4">
+                        <span class="relative flex h-2 w-2 mr-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        Available for opportunities
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                        Hi, I'm <span class="gradient-text">Dhanush SM</span>
+                    </h1>
+                    <div class="text-2xl md:text-3xl font-semibold mb-6">
+                        <span class="typewriter">Building Intelligent Systems</span>
+                    </div>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                        Full-Stack Developer & Machine Learning Engineer passionate about creating AI-powered solutions that solve real-world problems with elegant, scalable implementations.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-6 py-3 gradient-bg text-white rounded-lg font-medium hover:opacity-90 transition shadow-lg hover:shadow-xl flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Get In Touch
+                        </a>
+                        <a href="https://drive.google.com/file/d/1JVPyQLqC3cuXmw63WtQQwwJK5raKwUOD/view?usp=drivesdk" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/10 transition flex items-center">
+                            <i class="fas fa-file-download mr-2"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://github.com/DhanushSM" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/s-m-dhanush-787215289/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:iamdhanushsm28@gmail.com" class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            
+                    </div>
+                </div>
+                <div class="relative hidden md:block">
+                    <div class="absolute w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl -rotate-6"></div>
+                    <div class="relative w-full h-full bg-white rounded-2xl overflow-hidden shadow-2xl floating">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <img src="images\p1-portfolio.avif" alt="AI Project" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <h3 class="text-white text-xl font-bold">Latest Project</h3>
+                            <p class="text-gray-300">Sign Language Translation with 92% accuracy</p>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded">Python</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded">PyTorch</span>
+                                <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded">Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-3 py-1 text-sm font-semibold text-primary rounded-full bg-primary/10 mb-4">About Me</span>
+                <h2 class="text-3xl font-bold mb-4 section-title">Crafting Intelligent Solutions</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">Bridging the gap between artificial intelligence and exceptional user experiences through innovative development.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2">
+                    <h3 class="text-2xl font-semibold mb-6">Who am I?</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        I'm a passionate Full-Stack Developer and Machine Learning Engineer with expertise in building intelligent applications that bridge the gap between AI and exceptional user experiences. With a strong foundation in computer science and hands-on experience in developing production-ready systems, I thrive on solving complex problems with elegant, scalable solutions.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        My journey in technology has led me to work on diverse projects ranging from computer vision applications to scalable web platforms. I'm particularly interested in the intersection of AI and human-computer interaction, where technology can create meaningful impact in people's lives.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-1">Location</h4>
+                                <p class="text-gray-500">Puttur, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-1">Email</h4>
+                                <p class="text-gray-500">iamdhanushsm28@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-1">Phone</h4>
+                                <p class="text-gray-500">+91 9959480296</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 mb-1">Education</h4>
+                                <p class="text-gray-500">B.Tech in Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="px-6 py-3 gradient-bg text-white rounded-lg font-medium hover:opacity-90 transition shadow-lg flex items-center">
+                            <i class="fas fa-code mr-2"></i> View My Work
+                        </a>
+                        <a href="#contact" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/10 transition flex items-center">
+                            <i class="fas fa-comment-dots mr-2"></i> Let's Talk
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl shadow-lg p-8 card-hover flex flex-col justify-center">
+                    <h3 class="text-xl font-semibold mb-6 text-center">My Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Python & AI</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <progress class="skill-meter w-full" value="95" max="100"></progress>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Machine Learning</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <progress class="skill-meter w-full" value="90" max="100"></progress>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Java</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <progress class="skill-meter w-full" value="85" max="100"></progress>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Web Development</span>
+                                <span class="text-gray-500">88%</span>
+                            </div>
+                            <progress class="skill-meter w-full" value="88" max="100"></progress>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Cloud & DevOps</span>
+                                <span class="text-gray-500">80%</span>
+                            </div>
+                            <progress class="skill-meter w-full" value="80" max="100"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-3 py-1 text-sm font-semibold text-primary rounded-full bg-primary/10 mb-4">My Expertise</span>
+                <h2 class="text-3xl font-bold mb-4 section-title">Technical Skills</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">I've worked with a wide range of technologies in AI, web development, and cloud computing.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fab fa-python text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Python</span>
+                    <span class="text-xs text-gray-500 mt-1">Advanced</span>
+                </div>
+                
+                <!-- Repeat for other skills -->
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <span class="font-medium">TensorFlow</span>
+                    <span class="text-xs text-gray-500 mt-1">Advanced</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <span class="font-medium">PyTorch</span>
+                    <span class="text-xs text-gray-500 mt-1">Advanced</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fab fa-java text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Java</span>
+                    <span class="text-xs text-gray-500 mt-1">Advanced</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fab fa-js text-2xl"></i>
+                    </div>
+                    <span class="font-medium">JavaScript</span>
+                    <span class="text-xs text-gray-500 mt-1">Intermediate</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-database text-2xl"></i>
+                    </div>
+                    <span class="font-medium">MySQL</span>
+                    <span class="text-xs text-gray-500 mt-1">Intermediate</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-project-diagram text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Data Structures</span>
+                    <span class="text-xs text-gray-500 mt-1">Advanced</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-robot text-2xl"></i>
+                    </div>
+                    <span class="font-medium">NLP</span>
+                    <span class="text-xs text-gray-500 mt-1">Intermediate</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-eye text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Computer Vision</span>
+                    <span class="text-xs text-gray-500 mt-1">Intermediate</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-cloud text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Cloud Computing</span>
+                    <span class="text-xs text-gray-500 mt-1">Intermediate</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fab fa-git-alt text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Git</span>
+                    <span class="text-xs text-gray-500 mt-1">Advanced</span>
+                </div>
+                
+                <div class="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm card-hover">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white mb-3 tech-icon">
+                        <i class="fas fa-flask text-2xl"></i>
+                    </div>
+                    <span class="font-medium">Flask</span>
+                    <span class="text-xs text-gray-500 mt-1">Intermediate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary rounded-full bg-primary/10 mb-4">My Work</span>
+            <h2 class="text-3xl font-bold mb-4 section-title">Featured Projects</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Here are some of my recent projects that showcase my skills and expertise.</p>
+        </div>
+
+        <div class="swiper-container projects-swiper relative">
+            <div class="swiper-wrapper pb-12">
+                <!-- Project 1 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-lg h-full flex flex-col">
+                        <div class="project-image-container h-48 overflow-hidden">
+                            <img src="images/p2-portfolio.avif" alt="Project" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-2 py-1 bg-primary/90 text-white text-xs rounded">Java</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Movie Ticket Booking System</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">
+                                Developed a dynamic movie booking system enabling seamless reservations, cancellations, and priority seat allocation.
+                            </p>
+                            <div class="tech-tags flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Java</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Data Structures</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Algorithms</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-4"><span class="font-semibold">Impact:</span> Reduced booking processing time by 40%.</p>
+                            <a href="#" class="text-primary hover:underline flex items-center mt-auto">
+                                <i class="fab fa-github mr-1"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-lg h-full flex flex-col">
+                        <div class="project-image-container h-48 overflow-hidden">
+                            <img src="images/p3-portfolio.avif" alt="Project" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-2 py-1 bg-primary/90 text-white text-xs rounded">NLP</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Movie Recommendation System</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">
+                                Built a sentiment-based recommendation engine using collaborative and content-based filtering techniques.
+                            </p>
+                            <div class="tech-tags flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">NLP</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Machine Learning</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-4"><span class="font-semibold">Impact:</span> Enhanced user satisfaction by 45%.</p>
+                            <a href="#" class="text-primary hover:underline flex items-center mt-auto">
+                                <i class="fab fa-github mr-1"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-lg h-full flex flex-col">
+                        <div class="project-image-container h-48 overflow-hidden">
+                            <img src="images/p4-porfolio.avif" alt="Project" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-2 py-1 bg-primary/90 text-white text-xs rounded">AI</span>
+                                <span class="px-2 py-1 bg-primary/70 text-white text-xs rounded ml-1">Flask</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Emotion-Based Music Recommendation</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">
+                                AI-powered music recommendation platform leveraging facial and voice-based emotion detection with 85% accuracy.
+                            </p>
+                            <div class="tech-tags flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">OpenCV</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">TensorFlow</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Flask</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-4"><span class="font-semibold">Innovation:</span> Real-time emotion analysis from both facial expressions and voice tone.</p>
+                            <a href="https://github.com/DhanushSM/emotion_based_music_recommendation_using_voice-and-facial-emotion.git" class="text-primary hover:underline flex items-center mt-auto">
+                                <i class="fab fa-github mr-1"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-gray-50 rounded-xl overflow-hidden shadow-lg h-full flex flex-col">
+                        <div class="project-image-container h-48 overflow-hidden">
+                            <img src="images/p5-portfolio.avif" alt="Project" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div class="absolute top-4 right-4">
+                                <span class="px-2 py-1 bg-primary/90 text-white text-xs rounded">AI/ML</span>
+                                <span class="px-2 py-1 bg-primary/70 text-white text-xs rounded ml-1">Full Stack</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <h3 class="text-xl font-bold mb-2">Alzheimer's Early Prediction with AI</h3>
+                            <p class="text-gray-600 mb-4 flex-grow">
+                                Full-stack system for early Alzheimer's detection using advanced ML models trained on augmented datasets.
+                            </p>
+                            <div class="tech-tags flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Scikit-learn</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">Flask</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">XGBoost</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">HTML/CSS</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-4"><span class="font-semibold">Performance:</span> 94% accuracy, AUC 0.91</p>
+                            <a href="https://github.com/DhanushSM/early-alzeimers-prediction-and-classification.git" class="text-primary hover:underline flex items-center mt-auto">
+                                <i class="fab fa-github mr-1"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination !relative !bottom-0 mt-8"></div>
+
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-next !text-primary"></div>
+            <div class="swiper-button-prev !text-primary"></div>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="https://github.com/DhanushSM" target="_blank" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/10 transition">
+                <i class="fab fa-github mr-2"></i> View All Projects on GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Experience Section -->
+    <!-- Experience Section -->
+<section id="experience" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary rounded-full bg-primary/10 mb-4">My Journey</span>
+            <h2 class="text-3xl font-bold mb-4 section-title">Experience & Education</h2>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">My professional journey and academic background.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Experience Box -->
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg card-hover">
+                <div class="flex items-center mb-2">
+                    <h3 class="text-xl font-bold">Machine Learning Lead</h3>
+                    <span class="ml-auto text-sm text-gray-500">Sep 2023 - Present</span>
+                </div>
+                <h4 class="text-primary font-medium mb-3">Microsoft Learn Student Ambassadors</h4>
+                <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1">
+                    <li>Led a team of 6 to deliver AI workshops for 150+ students</li>
+                    <li>Organized hackathons on real-world ML problems</li>
+                    <li>Mentored new ambassadors in technical and leadership skills</li>
+                </ul>
+            </div>
+            
+            <!-- Education Box -->
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg card-hover">
+                <div class="flex items-center mb-2">
+                    <h3 class="text-xl font-bold">Bachelor's in Computer Science</h3>
+                    <span class="ml-auto text-sm text-gray-500">2021 - 2025</span>
+                </div>
+                <h4 class="text-primary font-medium mb-3">Kalasalingam Academy of Research</h4>
+                <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-1">
+                    <li>CGPA: 8.55/10</li>
+                    <li>Computer Science and Engineering - Specialization in AI and Machine Learning</li>
+                    <li>Published 2 research papers in IEEE/Springer conferences</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Publications & Certifications Section -->
+<section id="publications" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary rounded-full bg-primary/10 mb-4">Achievements</span>
+            <h2 class="text-3xl font-bold mb-4 section-title">Publications & Certifications</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">My research contributions and professional certifications in AI/ML domains.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Publications Column -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fas fa-file-alt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Research Publications</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Publication 1 -->
+                    <div class="border-l-4 border-primary pl-5 py-2">
+                        <h4 class="font-bold text-lg mb-1">Improving Security Through Intelligent CCTV Surveillance Systems</h4>
+                        <p class="text-gray-600 mb-2">4th International Conference on Ubiquitous Computing and Intelligent Information System</p>
+                        <span class="inline-block px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">ICUIS-155</span>
+                    </div>
+                    
+                    <!-- Publication 2 -->
+                    <div class="border-l-4 border-primary pl-5 py-2">
+                        <h4 class="font-bold text-lg mb-1">A Virtual Assistant with Real-Time Sign-to-Sign Language Translation for Users with Disabilities</h4>
+                        <p class="text-gray-600 mb-2">5th International Conference on IoT-Based Control Networks and Intelligent Systems</p>
+                        <span class="inline-block px-2 py-1 bg-gray-100 text-gray-800 text-xs rounded">Paper ID: ICICNIS 087</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications Column -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fas fa-certificate text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Professional Certifications</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Certification 1 -->
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-brain text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Introduction to Artificial Intelligence</h4>
+                            <p class="text-gray-600 text-sm">Great Learning</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 2 -->
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-network-wired text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Introduction to Deep Learning</h4>
+                            <p class="text-gray-600 text-sm">Great Learning</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 3 -->
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-project-diagram text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Introduction to Neural Networks & Deep Learning</h4>
+                            <p class="text-gray-600 text-sm">Great Learning</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 4 -->
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-robot text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Introduction to Generative AI</h4>
+                            <p class="text-gray-600 text-sm">Coursera</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 5 -->
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-language text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Natural Language Processing with Classification and Vector Space</h4>
+                            <p class="text-gray-600 text-sm">Coursera</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification 6 -->
+                    <div class="flex items-start">
+                        <div class="bg-primary/10 p-2 rounded-lg mr-4 mt-1">
+                            <i class="fas fa-database text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Data Science: Data Science Professional</h4>
+                            <p class="text-gray-600 text-sm">Oracle</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block px-3 py-1 text-sm font-semibold text-primary rounded-full bg-primary/10 mb-4">Get In Touch</span>
+            <h2 class="text-3xl font-bold mb-4 section-title">Contact Me</h2>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Have a project in mind or want to discuss opportunities? Feel free to reach out!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                 <h3 class="text-2xl font-semibold mb-6">Let's build something amazing together</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        I'm currently looking for new opportunities in AI and full-stack development.
+                        Whether you have a question or just want to say hi, I'll get back to you as soon as possible!
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 dark:text-gray-200 mb-1">Location</h4>
+                                <p class="text-gray-500 dark:text-gray-400">Puttur, Tirupathi, Andhra Pradesh, India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 dark:text-gray-200 mb-1">Email</h4>
+                                <p class="text-gray-500 dark:text-gray-400">iamdhanushsm28@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 dark:text-gray-200 mb-1">Phone</h4>
+                                <p class="text-gray-500 dark:text-gray-400">+91 9959480296</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://github.com/DhanushSM" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/s-m-dhanush-787215289/" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow-md hover:bg-primary hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+            </div>
+
+            <!-- Contact Form Section -->
+<div class="bg-gray-50 dark:bg-gray-800 rounded-xl shadow-lg p-8 card-hover">
+    <form id="contactForm" class="space-y-6" action="https://formspree.io/f/xjkwldnl" method="POST">
+        <div>
+            <label for="name" class="block mb-2 text-gray-700 dark:text-gray-300 font-medium">Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 transition">
+        </div>
+
+        <div>
+            <label for="email" class="block mb-2 text-gray-700 dark:text-gray-300 font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 transition">
+        </div>
+
+        <div>
+            <label for="subject" class="block mb-2 text-gray-700 dark:text-gray-300 font-medium">Subject</label>
+            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 transition">
+        </div>
+
+        <div>
+            <label for="message" class="block mb-2 text-gray-700 dark:text-gray-300 font-medium">Message</label>
+            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 transition"></textarea>
+        </div>
+
+        <button type="submit" class="w-full px-6 py-3 gradient-bg text-white rounded-lg font-medium hover:opacity-90 transition shadow-lg flex items-center justify-center">
+            <i class="fas fa-paper-plane mr-2"></i> Send Message
+        </button>
+
+        <div id="result" class="mt-4 text-center"></div>
+    </form>
+</div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <span class="text-xl font-bold gradient-text">Dhanush SM</span>
+                    <p class="text-gray-600 dark:text-gray-300 mt-2">Software Developer & Machine Learning Engineer</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="#home" class="text-gray-600 dark:text-gray-300 hover:text-primary transition nav-link">Home</a>
+                    <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-primary transition nav-link">About</a>
+                    <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-primary transition nav-link">Projects</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-primary transition nav-link">Contact</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2025 Dhanush SM. All rights reserved.
+                </p>
+                
+                <div class="flex space-x-4">
+                    <a href="https://github.com/DhanushSM" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-primary transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/s-m-dhanush-787215289/" target="_blank" class="text-gray-500 dark:text-gray-400 hover:text-primary transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-primary transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:iamdhanushsm28@gmail.com" class="text-gray-500 dark:text-gray-400 hover:text-primary transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.projects-swiper', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+        }
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim() || 'New Contact Form Submission';
+            const message = document.getElementById('message').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            if (!name || !email || !message) {
+                resultDiv.innerHTML = '<div class="text-red-500">Please fill in all required fields</div>';
+                resetButton();
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                resultDiv.innerHTML = '<div class="text-red-500">Please enter a valid email address</div>';
+                resetButton();
+                return;
+            }
+
+            try {
+                const response = await fetch('https://formspree.io/f/xjkwldnl', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, subject, message })
+                });
+
+                if (response.ok) {
+                    resultDiv.innerHTML = '<div class="text-green-500">Thank you for your message! I will get back to you soon.</div>';
+                    contactForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.innerHTML = `<div class="text-red-500">${error.message}</div>`;
+            } finally {
+                resetButton();
+                setTimeout(() => resultDiv.innerHTML = '', 5000);
+            }
+
+            function resetButton() {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+});
+
+
+
+    </script>
+</body>
+</html>
